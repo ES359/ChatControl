@@ -1,5 +1,6 @@
 package me.ES359.ChatControl;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -50,13 +51,16 @@ public class ChatCommand implements CommandExecutor{
                     if(args[0].equalsIgnoreCase("enabled"))
                     {
                         this.main.chat.setStatus(false);
-                        p.sendMessage(this.function.getPrefix() + ChatColor.GREEN +"Chat has been enabled.");
+                       // p.sendMessage(this.function.getPrefix() + ChatColor.GREEN +"Chat has been enabled.");
+                        Bukkit.getServer().broadcastMessage(this.function.getPrefix() + ChatColor.GREEN +"Global chat has been enabled by an Administrator.");
                         return true;
                     }
 
                     if(args[0].equalsIgnoreCase("disabled")) {
                         this.main.chat.setStatus(true);
-                        p.sendMessage(this.function.getPrefix() +ChatColor.RED+"Chat has been disabled. ");
+                       // p.sendMessage(this.function.getPrefix() +ChatColor.RED+"Chat has been disabled. ");
+                        Bukkit.getServer().broadcastMessage(this.function.getPrefix() + ChatColor.RED +"Global chat has been disabled by an Administrator.");
+                        return true;
                     }
 
                     if(args[0].equalsIgnoreCase("help"))
@@ -65,7 +69,7 @@ public class ChatCommand implements CommandExecutor{
                                 "&b&l████████ &6&l████████ &b&l████████\n"
                                         +"&6Plugin, "+main.pdfFile.getName()+ChatColor.GREEN+" v" +main.pdfFile.getVersion()+" &ccreated by,"+main.pdfFile.getAuthors()+"\n"
                                         +"&cCommand usage: &e/chat < [enabled] || [disabled] || [clear]>\n"
-                                        +"&6Permissions: &2chatcontrol.cmd\n"
+                                        +"&6Permissions: &2chatcontrol.cmd &2&l|| &cchatcontrol.bypass\n"
                                         +"&cQuestions? &6Comments? &a&oBug reports?\n Use /chat-report to help out!"
                         ));
                     }

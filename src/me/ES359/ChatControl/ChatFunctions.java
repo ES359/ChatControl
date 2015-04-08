@@ -50,9 +50,9 @@ public class ChatFunctions {
               for(int i=0; i <100; i ++) {
                   p.sendMessage("");
               }
-              p.sendMessage(getPrefix() + ChatColor.GOLD +"Chat has been cleared.");
           }
-        //Bukkit.getServer().broadcastMessage("");
+        Bukkit.getServer().broadcastMessage(getPrefix() + ChatColor.GOLD +"Chat has been cleared.");
+
     }
 
 

@@ -5,8 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.plugin.PluginDescriptionFile;
-
 /**
  * Created by ES359 on 4/7/15.
  */
@@ -37,8 +35,13 @@ public class ChatEvent implements Listener {
         String uuid = ""+p.getUniqueId();
 
         if(this.getStatus()) {
-            event.setCancelled(true);
-            p.sendMessage(ChatColor.RED+" Chat has been disabled by an Administrator.");
+            if(p.hasPermission("chatcontrol.bypass"))
+            {
+                event.setCancelled(false);
+            }else {
+                event.setCancelled(true);
+                p.sendMessage(ChatColor.RED+" Chat has been disabled by an Administrator.");
+            }
         }else {
             event.setCancelled(false);
         }
