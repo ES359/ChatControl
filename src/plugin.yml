@@ -1,0 +1,17 @@
+name: ChatControl
+main: me.ES359.ChatControl.ChatControl
+version: 1.1
+description: Chat plugin designed to maintain server chat.
+author: ES359,__PHP
+
+commands:
+  chat:
+    description: Main command for plugin.
+    aliases: [chatcontrol]
+    usage: /<command> clear
+
+  chat-report:
+    description: Allows a user to report a bug to developer.
+
+  chat-reports:
+    description: Allows a user to check their reports.
