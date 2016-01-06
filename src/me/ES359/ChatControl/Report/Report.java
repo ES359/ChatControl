@@ -53,8 +53,7 @@ public class Report implements CommandExecutor {
         }
     }
 
-    //107.170.21.151 Logger REQUEST1 Logs
-
+   
     public SQL getAccess(){
         return sql;
     }
