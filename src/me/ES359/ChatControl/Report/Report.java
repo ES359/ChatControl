@@ -59,7 +59,7 @@ public class Report implements CommandExecutor {
         return sql;
     }
     public void connectionExists(){
-        sql = new SQL("107.170.21.151","Logger","REQUEST1", "Logs");
+        sql = new SQL();
 
     }
 
